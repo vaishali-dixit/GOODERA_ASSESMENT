@@ -30,11 +30,11 @@ function SignIn() {
                 <div className="p-d-flex p-text-center p-flex-wrap p-m-6">
                     <p className="welcome-text p-my-2">Welcome back!</p>
                     <div className="p-col-12">
-                        <p className="p-text-left">Email *</p>
+                        <p className="form-text p-text-left">Email *</p>
                         <InputText value={mailId} onChange={(e) => setMailId(e.target.value)} autoFocus required />
                     </div>
                     <div className="p-col-12">
-                        <p className="p-text-left p-mt-1">Password *</p>
+                        <p className="form-text p-text-left p-mt-1">Password *</p>
                         <Password value={password} onChange={(e) => setPassword(e.target.value)} feedback={false} required />
                     </div>
                     <div className="p-col-12 p-mt-4">

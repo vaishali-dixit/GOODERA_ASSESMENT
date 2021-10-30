@@ -4,8 +4,8 @@ import { NavLink, Link } from 'react-router-dom';
 function NavBar() {
     return (
         <>
-            <div className="p-col-2">
-                JobHunt
+            <div className="nav-title p-col-2">
+                <i className="pi pi-briefcase p-pr-2"></i>JobHunt
             </div>
             <div className="p-col-2">
                 <NavLink to="/explore" className="nav-bar-link" activeClassName="active-link">
@@ -18,7 +18,7 @@ function NavBar() {
                 </NavLink>
             </div>
             <div className="p-col-5 p-text-right p-pr-6">
-                <Link to="/">Sign out</Link>
+                <Link to="/" className="sign-out">Sign out</Link>
             </div>
         </>
     )
