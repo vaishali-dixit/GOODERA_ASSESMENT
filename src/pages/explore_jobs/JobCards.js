@@ -22,7 +22,9 @@ function JobCards({ data }) {
                             &nbsp;&nbsp;&nbsp;&nbsp;
                             <b>Comapny:</b> {d.company.name}
                             </div>
-                            <div className="p-col-12 job-desc">{d.contents.slice(0, 100) + '...'}</div>
+                            <div className="p-col-12 job-desc">
+                                <div dangerouslySetInnerHTML={{ __html: d.contents.slice(0, 200) + '...' }} />
+                            </div>
                             <div className="p-col-12 p-text-right">
                                 <Button className="p-button-outlined" label="View Details" onClick={() => setDisplay(true)}></Button>
                             </div>
@@ -31,7 +33,7 @@ function JobCards({ data }) {
                     <Dialog header={d.name} visible={display} style={{ width: '50vw' }}
                         onHide={() => setDisplay(false)}>
                         <p>Job ID: {d.id}</p>
-                        <p>Description: {d.contents}</p>
+                        <p>Description: <div dangerouslySetInnerHTML={{ __html: d.contents }} /></p>
                     </Dialog>
                 </>
             )}
