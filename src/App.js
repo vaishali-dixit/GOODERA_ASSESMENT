@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Switch, Route, useHistory } from 'react-router-dom';
 
 import ExploreJobs from './pages/explore_jobs';
+import NavigationBar from './navigation';
 import PostJob from './pages/post_job';
 import SignIn from './pages/sign_in';
 
