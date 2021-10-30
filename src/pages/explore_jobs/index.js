@@ -6,6 +6,7 @@ import { ProgressSpinner } from 'primereact/progressspinner';
 import JobCards from './JobCards';
 
 import '../../styles/Explore.css';
+import SearchBar from './SearchBar';
 
 function ExploreJobs() {
     const [data, setData] = useState([]);
@@ -35,7 +36,10 @@ function ExploreJobs() {
                     <h1 style={{ marginTop: '150px' }}>Loading...</h1>
                     <ProgressSpinner className="p-my-3" />
                 </> :
-                <JobCards data={data} />
+                <>
+                    <SearchBar />
+                    <JobCards data={data} />
+                </>
             }
         </div>
     )

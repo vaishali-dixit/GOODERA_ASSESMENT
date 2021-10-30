@@ -23,7 +23,7 @@ function JobCards({ data }) {
                             <b>Comapny:</b> {d.company.name}
                             </div>
                             <div className="p-col-12 job-desc">
-                                <div dangerouslySetInnerHTML={{ __html: d.contents.slice(0, 200) + '...' }} />
+                                <div dangerouslySetInnerHTML={{ __html: d.contents.slice(0, 100) + '...' }} />
                             </div>
                             <div className="p-col-12 p-text-right">
                                 <Button className="p-button-outlined" label="View Details" onClick={() => setDisplay(true)}></Button>
