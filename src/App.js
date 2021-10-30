@@ -1,26 +1,28 @@
-import { Router, Switch, Route, Redirect, useHistory } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route, useHistory } from 'react-router-dom';
 
 import ExploreJobs from './pages/explore_jobs';
 import PostJob from './pages/post_job';
 import SignIn from './pages/sign_in';
 
+import 'primeflex/primeflex.css';
+import "primeicons/primeicons.css";
+import "primereact/resources/themes/bootstrap4-light-blue/theme.css";
+import "primereact/resources/primereact.min.css";
 import './App.css';
 
 function App() {
-  const isAuthenticated = false;
   const history = useHistory();
-
-  const PrivateRoute = ({ component: Component, ...rest }) => {
-    return <Route {...rest} render={(props) => isAuthenticated ? <Component {...props} /> : <Redirect to="/" />}></Route>
-  }
 
   return (
     <div className="App">
       <Router history={history}>
         <Switch>
-          <Route to="/" component={SignIn}></Route>
-          <PrivateRoute to="/explore" component={ExploreJobs}></PrivateRoute>
-          <PrivateRoute to="/post" component={PostJob}></PrivateRoute>
+          <Route path="/" component={SignIn} exact></Route>
+          <>
+            <NavigationBar />
+            <Route path="/explore" component={ExploreJobs}></Route>
+            <Route path="/post" component={PostJob}></Route>
+          </>
         </Switch>
       </Router>
     </div>

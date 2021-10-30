@@ -5,7 +5,7 @@
 
 .sign-in-div {
     width: 40%;
-    height: 30%;
+    height: fit-content;
     background-color: #E5E5E5;
     position: absolute;
     top:0;
@@ -21,4 +21,11 @@
     font-family: Poppins;
     font-weight: bold;
     font-size: 48px;
+    text-align: center;
+}
+
+.sign-in-div .p-inputtext,
+.sign-in-div .p-button,
+.sign-in-div .p-password {
+    width: 100%;
 }
